@@ -16,12 +16,14 @@ function Theme() {
    theme={{
     algorithm: isDarkMode ? darkAlgorithm : defaultAlgorithm,
    }}>
+    <Card>
     <Button onClick={handleClick}>
      Change Theme to {isDarkMode ? "Light" : "Dark"}
-     <AppHeader/>
+    </Button>
+    <AppHeader/>
     <PageContent />
     <AppFooter />
-    </Button>
+    </Card>
   </ConfigProvider>
  );
 }

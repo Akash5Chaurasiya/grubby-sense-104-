@@ -104,6 +104,7 @@ function AppCart() {
       setCartItems(res.products);
     });
   }, []);
+  // console.log(setCartItems);
   const onConfirmOrder = (values) => {
     console.log({ values });
     setCartDrawerOpen(false);
@@ -155,6 +156,7 @@ function AppCart() {
                     onChange={(value) => {
                       setCartItems((pre) =>
                         pre.map((cart) => {
+                          // console.log(cart)
                           if (record.id === cart.id) {
                             cart.total = cart.price * value;
                           }

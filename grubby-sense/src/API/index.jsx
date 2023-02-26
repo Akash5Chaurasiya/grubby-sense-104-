@@ -11,17 +11,18 @@ export const getCart = () => {
 };
 
 export const addToCart = (id) => {
-  return fetch("https://dummyjson.com/carts/add", {
-    method: "POST",
-    headers: { "Content-Type": "application/json" },
+  return fetch('https://dummyjson.com/carts/1', {
+    method: 'PUT', /* or PATCH */
+    headers: { 'Content-Type': 'application/json' },
     body: JSON.stringify({
-      userId: 1,
+      merge: true, // this will include existing products in the cart
       products: [
         {
           id: id,
           quantity: 1,
         },
-      ],
-    }),
-  }).then((res) => res.json());
+      ]
+    })
+  })
+  .then(res => console.log(res.json()));
 };
